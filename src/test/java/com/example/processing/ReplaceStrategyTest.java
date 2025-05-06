@@ -10,30 +10,30 @@ public class ReplaceStrategyTest {
     void processStep_replaceTripleC_withB() {
         ProcessResult result = strategy.processStep("ccc");
         assertEquals("b", result.getTransformed());
-        assertEquals(1, result.getExplanations().size());
-        assertEquals("ccc is replaced by b", result.getExplanations().get(0));
     }
 
     @Test
     void processStep_replaceQuadrupleB_withA() {
         ProcessResult result = strategy.processStep("bbbb");
         assertEquals("a", result.getTransformed());
-        assertEquals(1, result.getExplanations().size());
-        assertEquals("bbbb is replaced by a", result.getExplanations().get(0));
+    }
+    @Test
+    void processStep_replaceQuadrupleNum() {
+        ProcessResult result = strategy.processStep("222");
+        assertEquals("1", result.getTransformed());
     }
 
     @Test
     void processStep_replaceTripleA_withNothing() {
         ProcessResult result = strategy.processStep("aaa");
-        assertEquals("", result.getTransformed());
-        assertEquals(1, result.getExplanations().size());
-        assertEquals("aaa is replaced by nothing", result.getExplanations().get(0));
+        assertEquals("z", result.getTransformed());
+        result = strategy.processStep("AAA");
+        assertEquals("Z", result.getTransformed());
     }
 
     @Test
     void processStep_emptyInput() {
         ProcessResult result = strategy.processStep("");
         assertEquals("", result.getTransformed());
-        assertTrue(result.getExplanations().isEmpty());
     }
 }

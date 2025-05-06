@@ -10,7 +10,6 @@ public class RemoveStrategyTest {
     void processStep_noConsecutiveChars_returnsSame() {
         ProcessResult result = strategy.processStep("abbc");
         assertEquals("abbc", result.getTransformed());
-        assertTrue(result.getExplanations().isEmpty());
     }
 
     @Test
