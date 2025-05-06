@@ -14,7 +14,7 @@ public abstract class CommonProcessingStrategy implements ProcessingStrategy {
         String transformed = result.toString();
         return transformed.equals(input) ? 
             new ProcessResult(transformed) :
-            processStep(transformed); // 递归处理变化后的字符串
+            processStep(transformed);
     }
 
     private void processEntireString(String input, StringBuilder result) {
