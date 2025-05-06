@@ -9,31 +9,31 @@ public class ReplaceStrategyTest {
     @Test
     void processStep_replaceTripleC_withB() {
         ProcessResult result = strategy.processStep("ccc");
-        assertEquals("b", result.getTransformed());
+        assertEquals("b", result.transformed());
     }
 
     @Test
     void processStep_replaceQuadrupleB_withA() {
         ProcessResult result = strategy.processStep("bbbb");
-        assertEquals("a", result.getTransformed());
+        assertEquals("a", result.transformed());
     }
     @Test
     void processStep_replaceQuadrupleNum() {
         ProcessResult result = strategy.processStep("222");
-        assertEquals("1", result.getTransformed());
+        assertEquals("1", result.transformed());
     }
 
     @Test
     void processStep_replaceTripleA_withNothing() {
         ProcessResult result = strategy.processStep("aaa");
-        assertEquals("z", result.getTransformed());
+        assertEquals("z", result.transformed());
         result = strategy.processStep("AAA");
-        assertEquals("Z", result.getTransformed());
+        assertEquals("Z", result.transformed());
     }
 
     @Test
     void processStep_emptyInput() {
         ProcessResult result = strategy.processStep("");
-        assertEquals("", result.getTransformed());
+        assertEquals("", result.transformed());
     }
 }

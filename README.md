@@ -20,7 +20,7 @@ A flexible string processing library implementing the Strategy pattern for diffe
 ## Installation 📦
 
 ### Requirements
-- Java 8 or higher
+- Java 17 or higher
 - Maven 3.6+
 
 ### Maven Dependency
@@ -50,7 +50,6 @@ System.out.println(result.getTransformed());  // Output: "zawyzz"
 |-------------|-------------------------|------------------------|
 | "aaa"       | "z" (a → z)             | ""                     |
 | "AAAA"      | "ZZZ" (A → Z)           | ""                     |
-| "1111"      | "0000" (1 → 0)          | ""                     |
 | "abbbc"     | "aabbc" (b → a)         | "aac"                  |
 
 ### Advanced Usage

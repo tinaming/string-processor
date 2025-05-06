@@ -1,6 +1,6 @@
 package com.example.processing;
 
-public class RemoveStrategy extends CommonProcessingStrategy {
+public final class RemoveStrategy extends CommonProcessingStrategy {
     @Override
     protected void handleRun(StringBuilder result, char currentChar, int count) {
         if (count < minSequence) {

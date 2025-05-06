@@ -3,7 +3,8 @@ package com.example.processing;
 import java.io.InputStream;
 import java.util.Properties;
 
-public abstract class CommonProcessingStrategy implements ProcessingStrategy {
+public sealed abstract class CommonProcessingStrategy implements ProcessingStrategy
+        permits RemoveStrategy, ReplaceStrategy {
     protected int minSequence;
 
     public CommonProcessingStrategy() {
@@ -16,6 +17,7 @@ public abstract class CommonProcessingStrategy implements ProcessingStrategy {
             this.minSequence = DEFAULT_MIN_SEQUENCE;
         }
     }
+
     @Override
     public ProcessResult processStep(String input) {
         if (input.isEmpty()) {
