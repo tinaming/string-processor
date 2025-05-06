@@ -6,6 +6,9 @@ package com.example.processing;
  * for transforming input strings.
  */
 public interface ProcessingStrategy {
+
+    int DEFAULT_MIN_SEQUENCE = 3;
+
     /**
      * Processes the input string according to the specific strategy.
      *

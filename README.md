@@ -1,9 +1,9 @@
 ```markdown
 # String Processor 🔄
 
-[![Java Version](https://img.shields.io/badge/Java-17%2B-blue)](https://openjdk.org/)
+[![Java Version](https://img.shields.io/badge/Java-8%2B-blue)](https://openjdk.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/yourusername/string-processor/pulls)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/tinaming/string-processor/pulls)
 
 A flexible string processing library implementing the Strategy pattern for different character replacement/removal operations.
 

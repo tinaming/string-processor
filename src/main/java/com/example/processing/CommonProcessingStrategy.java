@@ -1,7 +1,21 @@
 package com.example.processing;
 
+import java.io.InputStream;
+import java.util.Properties;
+
 public abstract class CommonProcessingStrategy implements ProcessingStrategy {
-    
+    protected int minSequence;
+
+    public CommonProcessingStrategy() {
+        try (InputStream input = getClass().getClassLoader().getResourceAsStream("application.properties")) {
+            Properties prop = new Properties();
+            prop.load(input);
+            this.minSequence = Integer.parseInt(prop.getProperty("string.processor.min.sequence",
+                    String.valueOf(DEFAULT_MIN_SEQUENCE)));
+        } catch (Exception ex) {
+            this.minSequence = DEFAULT_MIN_SEQUENCE;
+        }
+    }
     @Override
     public ProcessResult processStep(String input) {
         if (input.isEmpty()) {
